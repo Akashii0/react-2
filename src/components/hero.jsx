@@ -19,8 +19,10 @@ function hero() {
           time—they reflect your style, precision, and craftsmanship.
         </p>
         <div className="flex gap-4 font-inter">
-          <button className="py-3 px-10 bg-white rounded-2xl">Shop now</button>
-          <button className="py-3 px-4 border-white border rounded-2xl text-white">
+          <button className="cursor-pointer py-3 px-10 bg-white rounded-2xl hover:bg-red-700 hover:text-white">
+            Shop now
+          </button>
+          <button className="cursor-pointer py-3 px-4 border-white border rounded-2xl text-white hover:border-red-700 hover:text-red-700">
             New Collections
           </button>
         </div>
