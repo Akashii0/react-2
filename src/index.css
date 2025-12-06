@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@font-face {
+  font-family: inter;
+  src: url("/fonts/Inter_18pt-Regular.ttf");
+}
+@font-face {
+  font-family: interLight;
+  src: url("/fonts/Inter_18pt-Light.ttf");
+}
+
+@theme {
+  --font-inter: "inter", inter;
+  --font-interLight: "interLight", interLight;
+
+  --color-brand: #191919;
+  --color-brand-gray: #8b8b8b;
+}
