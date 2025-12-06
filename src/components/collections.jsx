@@ -112,15 +112,15 @@ function Collections() {
         </div>
 
         {/* Slider */}
-        <div className="overflow-hidden w-[1248px]">
+        <div className="overflow-hidden max-w-[1072px]">
           <div
-            className="flex gap-8 transition-transform duration-500"
+            className="flex gap-4 transition-transform duration-500"
             style={{
-              transform: `translateX(-${page * 1248}px)`,
+              transform: `translateX(-${page * 1072}px)`,
             }}
           >
             {filteredWatches.map((w, i) => (
-              <div key={i} className="w-72 shrink-0">
+              <div key={i} className="w-64 shrink-0">
                 <Watch name={w.name} watchImage={w.img} />
               </div>
             ))}
