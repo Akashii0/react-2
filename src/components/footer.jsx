@@ -3,12 +3,12 @@ import logo from "../assets/Ayria_2.png";
 function footer() {
   return (
     <div>
-      <footer className="px-24 flex flex-col font-interLight bg-black text-white pt-20 pb-8">
-        <div className="flex justify-between">
+      <footer className="px-6 md:px-24 flex flex-col font-interLight bg-black text-white pt-20 pb-8">
+        <div className="flex flex-col md:flex-row justify-between">
           {/* Brand */}
           <div>
             <p className="font-inter text-6xl">Hōra</p>
-            <p className="text-brand-gray max-w-[60%] mt-4">
+            <p className="text-brand-gray max-w-[80%] md:max-w-[60%] mt-4">
               Crafting timeless elegance through precision and refined design.
               Discover watches that elevate your style every second of the day.
             </p>
@@ -17,7 +17,7 @@ function footer() {
               {/* social icons */}
             </div>
           </div>
-          <div className="max-w-7xl flex gap-12">
+          <div className="md:max-w-7xl flex gap-4 md:gap-12">
             {/* Shop */}
             <div>
               <h3 className="font-inter mb-4">SHOP</h3>
@@ -82,7 +82,7 @@ function footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="max-w-4xl mx-auto text-center mt-16">
+        <div className="max-w-4xl mx-auto text-center mt-8 md:mt-16">
           <p className="text-white/70 mb-4">
             Stay updated with exclusive releases, offers, and timeless classics.
           </p>
