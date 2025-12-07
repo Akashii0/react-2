@@ -64,7 +64,7 @@ function Collections() {
   };
 
   return (
-    <div className="pb-12 flex flex-col items-center justify-center gap-10 bg-black px-24 font-interLight">
+    <div className="pb-12 px-3 md:px-24 flex flex-col items-center justify-center gap-10 bg-black font-interLight">
       {/* Header */}
       <div className="w-full flex items-end justify-between">
         <p className="text-white text-4xl">

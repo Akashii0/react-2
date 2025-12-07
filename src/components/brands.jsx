@@ -6,7 +6,7 @@ import watch5 from "../assets/omega.png";
 
 function brands() {
   return (
-    <div className="h-[25vh] bg-black flex items-center justify-center">
+    <div className="py-30 md:h-[25vh] bg-black flex items-center justify-center">
       <div className="flex flex-col items-center gap-10">
         <p className="text-brand-gray font-inter text-2xl">SUPPORTED BRAND</p>
         <div className="flex gap-20">
