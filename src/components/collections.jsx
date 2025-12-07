@@ -109,7 +109,7 @@ function Collections() {
       </div>
 
       {/* Filters + Slider */}
-      <div className="relative w-full flex md:items-center justify-between">
+      <div className="relative w-full flex items-center justify-center md:justify-between">
         {/* Desktop Filters */}
         <div className="hidden md:flex flex-col font-interLight text-white space-y-1">
           {categories.map((c) => (
@@ -126,7 +126,7 @@ function Collections() {
         </div>
 
         {/* Mobile Filter Button */}
-        <div className="md:hidden">
+        <div className="md:hidden absolute top-0 left-0">
           <button
             onClick={() => setShowMobileDropdown(!showMobileDropdown)}
             className="flex items-center"
@@ -151,12 +151,12 @@ function Collections() {
         </div>
 
         {/* Slider */}
-        <div className="overflow-hidden max-w-[272px] md:max-w-[1072px] w-full">
+        <div className="overflow-hidden max-w-[256px] md:max-w-[1072px] w-full">
           <div
-            className="flex gap-4 transition-transform duration-500"
+            className="flex md:gap-4 transition-transform duration-500"
             style={{
               transform: `translateX(-${
-                page * (itemsPerPage === 1 ? 272 : 1072)
+                page * (itemsPerPage === 1 ? 256 : 1072)
               }px)`,
             }}
           >
