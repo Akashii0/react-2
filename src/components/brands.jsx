@@ -8,7 +8,9 @@ function brands() {
   return (
     <div className="py-24 md:h-[25vh] bg-black flex items-center justify-center">
       <div className="flex flex-col items-center gap-10">
-        <p className="mb-8 text-brand-gray font-inter text-2xl">SUPPORTED BRAND</p>
+        <p className="mb-8 text-brand-gray font-inter text-2xl">
+          SUPPORTED BRAND
+        </p>
         <div className="grid place-items-center grid-cols-6 grid-rows-2 gap-y-10 gap-x-4 md:flex md:gap-20">
           <img
             src={watch1}

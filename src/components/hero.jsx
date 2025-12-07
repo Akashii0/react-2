@@ -12,7 +12,7 @@ function hero() {
           Discover Timeless <br /> Elegance with Hōra
         </p>
         <p className="px-2 font-inter text-center text-white md:max-w-[35%]">
-          we believe that every second counts. Our carefully curated collection
+          We believe that every second counts. Our carefully curated collection
           of luxury and everyday timepieces offers more than just a way to keep
           time—they reflect your style, precision, and craftsmanship.
         </p>

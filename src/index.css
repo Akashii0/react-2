@@ -8,6 +8,10 @@
   src: url("/fonts/Inter_18pt-Light.ttf");
 }
 
+body {
+  background-color: black;
+}
+
 @theme {
   --font-inter: "inter", inter;
   --font-interLight: "interLight", interLight;
