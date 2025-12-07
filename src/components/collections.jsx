@@ -1,8 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import arrowLeft from "../assets/circle-arrow-left.png";
 import arrowRight from "../assets/circle-arrow.png";
 import Watch from "../components/watch";
 
+import filterBtn from "../assets/filter-btn.png";
 import audemars from "../assets/audemars-watch.png";
 import rolex from "../assets/rolex-watch.png";
 import omega from "../assets/omega-watch.png";
@@ -39,6 +40,20 @@ function Collections() {
 
   const [category, setCategory] = useState("All");
   const [page, setPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
+
+  // Update itemsPerPage on window resize
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 4);
+      setPage(0);
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
 
   // FILTER WATCHES
   const filteredWatches = useMemo(() => {
@@ -46,8 +61,7 @@ function Collections() {
     return allWatches.filter((w) => w.brand === category);
   }, [category]);
 
-  const items_per_page = 4;
-  const totalPages = Math.ceil(filteredWatches.length / items_per_page);
+  const totalPages = Math.ceil(filteredWatches.length / itemsPerPage);
 
   const next = () => {
     if (page < totalPages - 1) setPage(page + 1);
@@ -57,17 +71,17 @@ function Collections() {
     if (page > 0) setPage(page - 1);
   };
 
-  // reset page when category changes
   const changeCategory = (c) => {
     setCategory(c);
     setPage(0);
+    setShowMobileDropdown(false); // close mobile dropdown on selection
   };
 
   return (
-    <div className="pb-12 px-3 md:px-24 flex flex-col items-center justify-center gap-10 bg-black font-interLight">
+    <div className="pb-12 px-6 md:px-24 flex flex-col items-center justify-center gap-10 bg-black font-interLight">
       {/* Header */}
       <div className="w-full flex items-end justify-between">
-        <p className="text-white text-4xl">
+        <p className="text-white text-2xl md:text-4xl">
           New <br /> Collection
         </p>
 
@@ -95,9 +109,9 @@ function Collections() {
       </div>
 
       {/* Filters + Slider */}
-      <div className="w-full flex items-center justify-between">
-        {/* Filters */}
-        <div className="font-interLight text-white space-y-1">
+      <div className="relative w-full flex md:items-center justify-between">
+        {/* Desktop Filters */}
+        <div className="hidden md:flex flex-col font-interLight text-white space-y-1">
           {categories.map((c) => (
             <p
               key={c}
@@ -111,12 +125,39 @@ function Collections() {
           ))}
         </div>
 
+        {/* Mobile Filter Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setShowMobileDropdown(!showMobileDropdown)}
+            className="flex items-center"
+          >
+            <img src={filterBtn} alt="filter" className="h-10" />
+          </button>
+          {showMobileDropdown && (
+            <div className="absolute overflow-hidden top-10 mt-2 left-0 w-48 bg-white text-black rounded-lg shadow-lg z-50 flex flex-col">
+              {categories.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => changeCategory(c)}
+                  className={`text-left px-4 py-2 hover:bg-red-700 ${
+                    category === c ? "bg-red-700" : ""
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Slider */}
-        <div className="overflow-hidden max-w-[1072px]">
+        <div className="overflow-hidden max-w-[272px] md:max-w-[1072px] w-full">
           <div
             className="flex gap-4 transition-transform duration-500"
             style={{
-              transform: `translateX(-${page * 1072}px)`,
+              transform: `translateX(-${
+                page * (itemsPerPage === 1 ? 272 : 1072)
+              }px)`,
             }}
           >
             {filteredWatches.map((w, i) => (
