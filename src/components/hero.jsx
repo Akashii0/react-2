@@ -9,7 +9,7 @@ function hero() {
 
       <div className="flex flex-col items-center gap-8 z-20 pb-32 sm:pb-0">
         <p className="font-interLight text-3xl md:text-6xl text-center text-white">
-          Discover Timeless <br /> Elegance with Timezone
+          Discover Timeless <br /> Elegance with Hōra
         </p>
         <p className="px-2 font-inter text-center text-white md:max-w-[35%]">
           we believe that every second counts. Our carefully curated collection
