@@ -15,7 +15,7 @@ function App() {
       <Brands />
       <Collections />
       <div
-        className="relative bg-[url(./assets/watch2-bg-mobile.png)] md:bg-[url(./assets/watch2-bg.png)] bg-cover bg-center h-[80vh] font-inter text-white"
+        className="relative bg-[url(./assets/watch2-bg-mobile.png)] md:bg-[url(./assets/watch2-bg.png)] bg-cover h-[80vh] font-inter text-white"
         // style={{ backgroundImage: `url(${watchBg})` }}
       >
         <p className="absolute right-0 pt-6 md:pt-20 pr-6 md:pr-24 max-w-[70%] md:max-w-[30%]">
