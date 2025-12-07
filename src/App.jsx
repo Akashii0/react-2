@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       <Hero />
       <Brands />
