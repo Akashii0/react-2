@@ -116,7 +116,7 @@ function Collections() {
             <p
               key={c}
               className={`cursor-pointer transition ${
-                category === c ? "text-red-700" : "text-white"
+                category === c ? "text-brand-gold" : "text-white"
               }`}
               onClick={() => changeCategory(c)}
             >
@@ -139,8 +139,8 @@ function Collections() {
                 <button
                   key={c}
                   onClick={() => changeCategory(c)}
-                  className={`text-left px-4 py-2 hover:bg-red-700 ${
-                    category === c ? "bg-red-700" : ""
+                  className={`text-left px-4 py-2 hover:bg-brand-gold ${
+                    category === c ? "bg-brand-gold" : ""
                   }`}
                 >
                   {c}
@@ -175,7 +175,7 @@ function Collections() {
           <span
             key={i}
             className={`h-2 w-2 rounded-full ${
-              i === page ? "bg-red-700" : "bg-brand-gray"
+              i === page ? "bg-brand-gold-sec" : "bg-brand-gray"
             }`}
           ></span>
         ))}
